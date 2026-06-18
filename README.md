@@ -41,11 +41,19 @@
 ## Структура проекта
 
 ```text
-backend/
-frontend/
-docs/
-docker-compose.yml
-README.md
+Task-Management-System/
+│
+├── backend/
+├── frontend/
+├── db/
+│   └── init.sql
+├── docs/
+│   ├── Optimization_and_security.md
+│   ├── project_deployment.md
+│   └── testing_report.md
+├── database_dump.sql
+├── docker-compose.yml
+└── README.md
 ```
 
 ## Запуск проекта через Docker
@@ -60,7 +68,7 @@ README.md
 Клонировать репозиторий:
 
 ```bash
-git clone <repository_url>
+git clone git clone https://github.com/LIJTA3U/Task-Management-System>
 cd Task-Management-System
 ```
 
@@ -88,6 +96,21 @@ PostgreSQL:
 
 ```text
 localhost:5432
+```
+После запуска контейнеров база данных будет автоматически создана на основе файла `db/init.sql`.
+
+Дополнительно в проекте присутствует резервная копия базы данных `database_dump.sql`, содержащая актуальную структуру и тестовые данные.
+
+## Восстановление базы данных
+
+При необходимости база данных может быть восстановлена из файла резервной копии:
+```bash
+docker exec -i task_db psql -U postgres task_management_system < database_dump.sql
+```
+Для создания новой резервной копии:
+
+```bash
+docker exec -t task_db pg_dump -U postgres task_management_system > database_dump.sql
 ```
 
 ## Переменные окружения
