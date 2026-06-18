@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-shell">
+        <a href="index.html" class="back-link">← На главную</a>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-icon">✨</div>
+                <h1>Создание аккаунта</h1>
+                <p>Зарегистрируйся, чтобы начать работать с задачами</p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <label for="registerName">Имя</label>
+                <input id="registerName" type="text" name="name" placeholder="Ваше имя" required>
+
+                <label for="registerEmail">Email</label>
+                <input id="registerEmail" type="email" name="email" placeholder="example@yandex.ru" required>
+
+                <label for="registerPassword">Пароль</label>
+                <input id="registerPassword" type="password" name="password" placeholder="Придумайте пароль" required>
+
+                <button type="submit" class="btn btn-full">Зарегистрироваться</button>
+            </form>
+
+            <div class="auth-footer">
+                <span>Уже есть аккаунт?</span>
+                <a href="login.html">Войти</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

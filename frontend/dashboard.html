@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+
+<div class="dashboard-heading">
+    <h1>Личный кабинет</h1>
+
+    <div class="user-bar info-box">
+        <div id="userInfo"></div>
+
+        <button
+            id="logoutBtn"
+            type="button"
+            class="btn btn-secondary dashboard-logout">
+            Выйти
+        </button>
+    </div>
+</div>
+        <div class="card">
+            <h2>Статистика</h2>
+            <div id="statsContainer"></div>
+        </div>
+
+        <div class="card">
+            <h2>Уведомления</h2>
+            <div id="notificationsContainer"></div>
+        </div>
+
+        <div class="card">
+            <h2 id="taskFormTitle">Создать задачу</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+
+                <label>Название задачи</label>
+                <input type="text" id="title" name="title" placeholder="Название задачи" required>
+
+                <label>Описание</label>
+                <textarea id="description" name="description" placeholder="Описание"></textarea>
+
+                <label>Статус</label>
+                <select id="status" name="status">
+                    <option value="new">Новая</option>
+                    <option value="in_progress">В работе</option>
+                    <option value="done">Выполнена</option>
+                </select>
+
+                <label>Приоритет</label>
+                <select id="priority" name="priority">
+                    <option value="low">Низкий</option>
+                    <option value="medium" selected>Средний</option>
+                    <option value="high">Высокий</option>
+                </select>
+
+                <label>Срок</label>
+                <input type="date" id="due_date" name="due_date">
+
+                <div class="form-actions">
+                    <button type="submit" id="saveTaskBtn" class="btn">Создать задачу</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-secondary hidden">Отмена</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Поиск, фильтрация и сортировка</h2>
+            <div class="filters">
+                <input type="text" id="searchInput" placeholder="Поиск по названию или описанию">
+
+                <select id="statusFilter">
+                    <option value="">Все статусы</option>
+                    <option value="new">Новая</option>
+                    <option value="in_progress">В работе</option>
+                    <option value="done">Выполнена</option>
+                </select>
+
+                <select id="priorityFilter">
+                    <option value="">Все приоритеты</option>
+                    <option value="low">Низкий</option>
+                    <option value="medium">Средний</option>
+                    <option value="high">Высокий</option>
+                </select>
+
+                <select id="sortBy">
+                    <option value="created_at">Сортировка: дата создания</option>
+                    <option value="updated_at">Сортировка: дата обновления</option>
+                    <option value="due_date">Сортировка: срок</option>
+                    <option value="title">Сортировка: название</option>
+                    <option value="status">Сортировка: статус</option>
+                    <option value="priority">Сортировка: приоритет</option>
+                </select>
+
+                <select id="sortOrder">
+                    <option value="desc">По убыванию</option>
+                    <option value="asc">По возрастанию</option>
+                </select>
+
+                <div class="filter-actions">
+                    <button id="applyFilters" type="button" class="btn">Применить</button>
+                    <button id="resetFilters" type="button" class="btn btn-secondary">Сбросить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Список задач</h2>
+            <div id="tasksContainer"></div>
+        </div>
+    </div>
+
+    <script src="js/tasks.js"></script>
+</body>
+</html>
