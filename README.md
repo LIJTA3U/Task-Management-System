@@ -2,6 +2,8 @@
 
 Веб-приложение для управления задачами с системой аутентификации пользователей, уведомлениями, статистикой и Docker-развёртыванием.
 
+(screenshots/лого.png)
+
 ## Возможности
 
 * Регистрация и авторизация пользователей
@@ -29,9 +31,9 @@
 
 ### Frontend
 
-* HTML5
-* CSS3
-* JavaScript (ES6)
+* HTML
+* CSS
+* JavaScript
 
 ### DevOps
 
@@ -46,11 +48,7 @@ Task-Management-System/
 ├── backend/
 ├── frontend/
 ├── db/
-│   └── init.sql
 ├── docs/
-│   ├── Optimization_and_security.md
-│   ├── project_deployment.md
-│   └── testing_report.md
 ├── database_dump.sql
 ├── docker-compose.yml
 └── README.md
