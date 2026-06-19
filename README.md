@@ -74,7 +74,7 @@ Task-Management-System/
 Клонировать репозиторий:
 
 ```bash
-git clone git clone https://github.com/LIJTA3U/Task-Management-System>
+git clone https://github.com/LIJTA3U/Task-Management-System>
 cd Task-Management-System
 ```
 
